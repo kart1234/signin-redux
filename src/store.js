@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers';
 
 export default function (initialState, debugSession) {
 	let finalCreateStore
@@ -28,7 +27,7 @@ export default function (initialState, debugSession) {
 		)(createStore);
 	}
 
-	const store = finalCreateStore(rootReducer, initialState);
+	const store = finalCreateStore(undefined, initialState);
 
 	if(process.env.NODE_ENV !== "production" && module.hot) {
 		module.hot.accept('./reducers', () =>

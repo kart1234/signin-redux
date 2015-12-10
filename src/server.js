@@ -109,8 +109,10 @@ server.ext("onPreResponse", (request, reply) => {
 			<html lang="en-us">
 				<head>
 					<meta charset="utf-8">
-					<title>Hapi Universal Redux</title>
+					<title>Walmart Signin</title>
 					<link rel="shortcut icon" href="/favicon.ico">
+					<link rel="stylesheet" href="style.css" />
+    				<link rel="stylesheet" href="bootstrap.css" />
 				</head>
 				<body>
 					<div id="react-root">${reactString}</div>

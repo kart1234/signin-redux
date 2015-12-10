@@ -23,7 +23,7 @@ syncReduxAndRouter(history, store);
 /**
  * Fire-up Redux DevTools on a different node.
  */
-
+/*
 const devRoot = window.document.getElementById("react-dev");
 
 if(process.env.NODE_ENV !== "production"){
@@ -35,7 +35,7 @@ if(process.env.NODE_ENV !== "production"){
 		devRoot
 	)
 }
-
+*/
 /**
  * Fire-up React Router.
  */

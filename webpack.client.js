@@ -21,11 +21,22 @@ module.exports = {
 		new webpack.optimize.UglifyJsPlugin()
 	],
 	module:  {
-		loaders: [
-			{test: /\.json$/, loaders: ["json"]},
-			{include: /\.js$/, loaders: ["babel-loader?stage=0&optional=runtime"], exclude: /node_modules/}
+		//loaders: [
+			//{test: /\.json$/, loaders: ["json"]},
+			//{include: /\.js$/, loaders: ["babel-loader?stage=0&optional=runtime"], exclude: /node_modules/}
 			// {test: /\.js$/, loaders: ["babel?cacheDirectory&presets[]=es2015&presets[]=react&presets[]=stage-0"], exclude: /node_modules/}
-		],
+		//],
+		loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loaders: ["babel-loader?experimental&stage=0"],
+      },
+      {
+        test: /\.html$/,
+        loader: "file?name=[name].[ext]",
+      }
+    ],
 		postLoaders: [],
 		noParse: /\.min\.js/
 	},
@@ -40,6 +51,7 @@ module.exports = {
 		],
 		extensions: ["", ".json", ".js"]
 	},
+	
 	node:    {
 		__dirname: true,
 		fs:        'empty'

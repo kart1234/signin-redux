@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router';
 import StargazersContainer from './containers/StargazersContainer';
+
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
@@ -13,6 +14,7 @@ export default (
 		<Route component={Header}>
 			<Route path="/" component={Home} />
 			<Route path="/about" component={About} />
+			
 		</Route>
 	</Route>
 );
